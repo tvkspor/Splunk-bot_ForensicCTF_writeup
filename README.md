@@ -40,8 +40,33 @@ List some SourceType:
 ```
 ![Scenario1(1)](./Images/Scenario1(1).png)
 
+Now we begin to find which ip belongs to our web 'imreallynotbatman' by doing some SPL scanning to return the destination IP address (`dest_ip`) with the highest hits, which is likely indicative of a web server.
+:
+
+```
+index="botsv1" sourcetype="stream:http"  "imreallynotbatman"
+| top dest_ip
+```
+![Scenario1(3)](./Images/Scenario1(3).png)
+
 
 ### Q101: What is the likely IPv4 address of someone from the Po1s0n1vy group scanning imreallynotbatman.com for web application vulnerabilities?
 
-First, we need to identify the IP address that belongs to our web server, which is likely what the threat group is scanning. We can run the below SPL query with the pipe command to return the destination IP address (`dest_ip`) with the highest hits, which is likely indicative of a web server.
+```
+| metadata type=sourcetypes
+| fields sourcetype
+```
+
+In list SourceType we can see `fgt_` that is likely some firewall log we can discuss more about it using some SPL querry:
+
+```
+index="botsv1" sourcetype=fgt* "imreallynotbatman"
+```
+
+After that in action we see 3 different value "allowed, blocked, deferred". We can focus on the "blocked" field which is related in some scan action 
+
+![Scenario1(4)](./Images/Scenario1(4).png)
+
+
+
 
