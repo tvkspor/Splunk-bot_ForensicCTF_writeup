@@ -36,7 +36,7 @@ List some SourceType:
 | metadata type=sourcetypes
 | fields sourcetype
 ```
-![Scenario1(1)](./images/Scenario1(1).png)
+![Scenario1(1)](./Images/Scenario1(1).png)
 
 ### Q101: What is the likely IPv4 address of someone from the Po1s0n1vy group scanning imreallynotbatman.com for web application vulnerabilities?
 
