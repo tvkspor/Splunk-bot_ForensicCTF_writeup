@@ -28,6 +28,11 @@ We now first figur out the total index in file using:
 
 | eventcount summarize=false index=*
 
+List some SourceType:
+
+| metadata type=sourcetypes
+| fields sourcetype
+
 ### Q101: What is the likely IPv4 address of someone from the Po1s0n1vy group scanning imreallynotbatman.com for web application vulnerabilities?
 
 First, we need to identify the IP address that belongs to our web server, which is likely what the threat group is scanning. We can run the below SPL query with the pipe command to return the destination IP address (`dest_ip`) with the highest hits, which is likely indicative of a web server.
