@@ -26,12 +26,17 @@ This Splunk BOTS recap and walkthrough is based on the Version 1 (2015) event. Y
 
 We now first figur out the total index in file using:
 
+```
 | eventcount summarize=false index=*
+```
 
 List some SourceType:
 
+```
 | metadata type=sourcetypes
 | fields sourcetype
+```
+![Scenario1(1)](./images/Scenario1(1).png)
 
 ### Q101: What is the likely IPv4 address of someone from the Po1s0n1vy group scanning imreallynotbatman.com for web application vulnerabilities?
 
