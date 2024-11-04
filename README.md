@@ -29,14 +29,17 @@ We now first figur out the total index in file using:
 ```
 | eventcount summarize=false index=*
 ```
+![Scenario1(2)](./Images/Scenario1(2).png)
+
+We might find that the index botsv1 have the most count in all event.
 
 List some SourceType:
-
 ```
 | metadata type=sourcetypes
 | fields sourcetype
 ```
 ![Scenario1(1)](./Images/Scenario1(1).png)
+
 
 ### Q101: What is the likely IPv4 address of someone from the Po1s0n1vy group scanning imreallynotbatman.com for web application vulnerabilities?
 
